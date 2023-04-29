@@ -1,9 +1,6 @@
 package com.yeonkims.readingbuddy.network
 
-import com.yeonkims.readingbuddy.model.Book
-import io.reactivex.Flowable
 import io.reactivex.Observable
-import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory

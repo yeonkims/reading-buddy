@@ -2,11 +2,9 @@ package com.yeonkims.readingbuddy
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 
-
-//class BookBindingAdapter {
-//    @BindingAdapter("img_res")
-//    fun imageLoad(imageView: ImageView, resId: Int) {
-//        imageView.setImageResource(resId)
-//    }
-//}
+@BindingAdapter("imageUrl")
+fun loadImage(view: ImageView, url: String) {
+    Glide.with(view.context).load(url).into(view)
+}

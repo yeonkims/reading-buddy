@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yeonkims.readingbuddy.databinding.ItemBookBinding
 import com.yeonkims.readingbuddy.model.Book
 
-class BookListAdapter(val items: List<Book>) : RecyclerView.Adapter<BookListAdapter.ViewHolder>() {
+class BookListAdapter(var items: List<Book>) : RecyclerView.Adapter<BookListAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemBookBinding
 

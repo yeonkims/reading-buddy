@@ -2,11 +2,13 @@ package com.yeonkims.readingbuddy
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.yeonkims.readingbuddy.databinding.ItemBookBinding
 import com.yeonkims.readingbuddy.model.Book
 
-class BookListAdapter(var items: List<Book>) : RecyclerView.Adapter<BookListAdapter.ViewHolder>() {
+class BookListAdapter(var items: List<Book>) : ListAdapter<Book, BookListAdapter.ViewHolder>(BookDiffUtil) {
 
     private lateinit var binding: ItemBookBinding
 
@@ -29,5 +31,16 @@ class BookListAdapter(var items: List<Book>) : RecyclerView.Adapter<BookListAdap
         fun bind(item: Book) {
             binding.book = item
         }
+    }
+}
+
+object BookDiffUtil : DiffUtil.ItemCallback<Book>() {
+
+    override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
+        return oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
+        return oldItem == newItem
     }
 }

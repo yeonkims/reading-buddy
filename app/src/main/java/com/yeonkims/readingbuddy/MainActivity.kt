@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.latestNotes.observe(this) { books ->
             adapter.items = books
-            adapter.notifyDataSetChanged()
+            adapter.submitList(books)
+
         }
         recyclerView.adapter = adapter
 
